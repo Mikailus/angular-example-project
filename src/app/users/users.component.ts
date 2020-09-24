@@ -22,4 +22,12 @@ export class UsersComponent implements OnInit {
     this.users[editedUserIndex] = editedUser;
   }
 
+  public onAddUser(user: Omit<User, 'id'>): void {
+    const id: number = Math.random() * 1000;
+    this.users.push({
+      ...user,
+      id
+    });
+  }
+
 }

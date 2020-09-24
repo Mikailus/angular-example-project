@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { digits } from '../digits.validator';
+import { User } from '../interfaces/user.interface';
 
 @Component({
   selector: 'app-new-user-form',
@@ -10,6 +11,8 @@ import { digits } from '../digits.validator';
   styleUrls: ['./new-user-form.component.css']
 })
 export class NewUserFormComponent implements OnInit, OnDestroy {
+  @Output() add: EventEmitter<Omit<User, 'id'>> = new EventEmitter<Omit<User, 'id'>>();
+
   public userForm: FormGroup;
 
   private unsubscribe$: Subject<void> = new Subject<void>();
@@ -29,5 +32,13 @@ export class NewUserFormComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  public onAddUserClick(): void {
+    const isFormValid: boolean = this.userForm.valid;
+    if (isFormValid) {
+      this.add.emit(this.userForm.value);
+      this.userForm.reset();
+    }
   }
 }
