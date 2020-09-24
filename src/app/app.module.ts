@@ -8,6 +8,7 @@ import { BigLettersPipe } from './big-letters.pipe';
 import { UserComponent } from './user/user.component';
 import { BgGreenDirective } from './bg-green.directive';
 import { BgMouseoverDirective } from './bg-mouseover.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BgMouseoverDirective } from './bg-mouseover.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

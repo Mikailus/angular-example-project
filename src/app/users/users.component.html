@@ -1,5 +1,7 @@
-<app-user
-  *ngFor="let user of users; index as i"
-  [user]="user"
-  [index]="i"
-  (delete)="onUserDelete($event)"></app-user>
+<div class="users-container">
+  <app-user
+    *ngFor="let user of users; index as i"
+    [user]="user"
+    [index]="i"
+    (delete)="onUserDelete($event)"></app-user>
+</div>

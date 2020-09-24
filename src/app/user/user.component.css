@@ -1,7 +1,8 @@
 .card {
   margin: 20px;
   padding: 10px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 200px;
   height: 200px;
   border: 1px solid grey;
@@ -19,8 +20,15 @@
 .card__section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .card__text {
   color: grey;
+}
+
+.card__input {
+  display: block;
+  width: 50%;
+  height: 1rem;
 }
