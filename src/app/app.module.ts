@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { BigLettersPipe } from './big-letters.pipe';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    BigLettersPipe
+    BigLettersPipe,
+    UserComponent
   ],
   imports: [
     BrowserModule,

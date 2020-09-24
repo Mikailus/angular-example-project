@@ -1,11 +1,1 @@
-<div *ngFor="let user of users" class="card">
-  <div class="card__title">{{ user.name | bigLetters }}</div>
-  <div class="card__section">
-    <p class="card__text">Phone number</p>
-    <p class="card__text"> {{ user.phone }}</p>
-  </div>
-  <div class="card__section">
-    <p class="card__text">Email</p>
-    <p class="card__text">{{ user.email }}</p>
-  </div>
-</div>
+<app-user *ngFor="let user of users" [user]="user"></app-user>
