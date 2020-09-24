@@ -17,4 +17,9 @@ export class UsersComponent implements OnInit {
     this.users = this.users.filter(user => user.id !== id);
   }
 
+  public onEditUser(editedUser: User): void {
+    const editedUserIndex: number = this.users.findIndex(user => user.id === editedUser.id);
+    this.users[editedUserIndex] = editedUser;
+  }
+
 }

@@ -13,6 +13,7 @@ export class UserComponent implements OnInit, OnDestroy {
   @Input() user: User;
   @Input() index: number;
   @Output() delete: EventEmitter<number> = new EventEmitter<number>();
+  @Output() edit: EventEmitter<User> = new EventEmitter<User>();
 
   public isInEditMode: boolean = false;
   public userForm: FormGroup;
@@ -41,6 +42,22 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   public onEditClick(): void {
-    this.isInEditMode = !this.isInEditMode;
+    if (this.isInEditMode) {
+      const isFormValid: boolean = this.userForm.valid;
+      if (isFormValid) {
+        this.saveUser();
+        this.isInEditMode = !this.isInEditMode;
+      }
+    } else {
+      this.isInEditMode = !this.isInEditMode;
+    }
+  }
+
+  private saveUser(): void {
+    const fullUserData: User = {
+      ...this.userForm.value,
+      id: this.user.id
+    }
+    this.edit.emit(fullUserData);
   }
 }

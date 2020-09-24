@@ -3,5 +3,6 @@
     *ngFor="let user of users; index as i"
     [user]="user"
     [index]="i"
-    (delete)="onUserDelete($event)"></app-user>
+    (delete)="onUserDelete($event)"
+    (edit)="onEditUser($event)"></app-user>
 </div>
