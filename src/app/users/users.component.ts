@@ -13,9 +13,8 @@ export class UsersComponent implements OnInit {
     { id: 3, name: 'Ola', phone: 78998987, email: 'ola@ola.com' },
   ];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public onUserDelete(id: number): void {
+    this.users = this.users.filter(user => user.id !== id);
   }
 
 }
