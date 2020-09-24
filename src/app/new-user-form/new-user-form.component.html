@@ -1,0 +1,29 @@
+<div class="new-user-form">
+  <h2>Add new user</h2>
+  <form [formGroup]="userForm">
+    <div class="input-container">
+      <input formControlName="name" class="input" type="text" placeholder="Antek">
+      <p
+        *ngIf="userForm.get('name').errors && userForm.get('name').errors.required"
+        class="input-error">
+        Pole jest wymagane
+      </p>
+    </div>
+    <div class="input-container">
+      <input formControlName="phone" class="input" type="text" placeholder="123456789">
+      <p
+        *ngIf="userForm.get('phone').errors && userForm.get('phone').errors.required"
+        class="input-error">
+        Pole jest wymagane
+      </p>
+    </div>
+    <div class="input-container">
+      <input formControlName="email" class="input" type="text" placeholder="abc@example.com">
+      <p
+        *ngIf="userForm.get('email').errors && userForm.get('email').errors.required"
+        class="input-error">
+        Pole jest wymagane
+      </p>
+    </div>
+  </form>
+</div>

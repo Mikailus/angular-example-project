@@ -1,0 +1,21 @@
+.input-container {
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.input-error {
+  position: absolute;
+  color: red;
+  font-size: 10px;
+}
+
+.new-user-form {
+  margin-top: 50px;
+  width: 400px;
+  padding: 10px;
+}

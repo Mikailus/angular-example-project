@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { BgGreenDirective } from './bg-green.directive';
 import { BgMouseoverDirective } from './bg-mouseover.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BigLettersPipe,
     UserComponent,
     BgGreenDirective,
-    BgMouseoverDirective
+    BgMouseoverDirective,
+    NewUserFormComponent
   ],
   imports: [
     BrowserModule,
