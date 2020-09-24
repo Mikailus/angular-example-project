@@ -2,21 +2,42 @@
   <div class="card__title" appBgMouseover>
     <ng-container [ngSwitch]="isInEditMode">
       <div *ngSwitchCase="false">{{ user.name | bigLetters }}</div>
-      <input *ngSwitchCase="true" formControlName="name" class="card__input" type="text">
+      <div *ngSwitchCase="true" class="card__input-container">
+        <input formControlName="name" class="card__input" type="text" placeholder="Antek">
+        <p
+          *ngIf="userForm.get('name').errors && userForm.get('name').errors.required"
+          class="card__input-error">
+          Pole jest wymagane
+        </p>
+      </div>
     </ng-container>
   </div>
   <div class="card__section">
     <p class="card__text">Phone number</p>
     <ng-container [ngSwitch]="isInEditMode">
       <p *ngSwitchCase="false" class="card__text"> {{ user.phone }}</p>
-      <input *ngSwitchCase="true" formControlName="phone" class="card__input" type="text">
+      <div *ngSwitchCase="true" class="card__input-container">
+        <input formControlName="phone" class="card__input" type="text" placeholder="123456789">
+        <p
+          *ngIf="userForm.get('phone').errors && userForm.get('phone').errors.required"
+          class="card__input-error">
+          Pole jest wymagane
+        </p>
+      </div>
     </ng-container>
   </div>
   <div class="card__section">
     <p class="card__text">Email</p>
     <ng-container [ngSwitch]="isInEditMode">
       <p *ngSwitchCase="false" class="card__text">{{ user.email }}</p>
-      <input *ngSwitchCase="true" formControlName="email" class="card__input" type="text">
+      <div *ngSwitchCase="true" class="card__input-container">
+        <input formControlName="email" class="card__input" type="text" placeholder="abc@example.com">
+        <p
+          *ngIf="userForm.get('email').errors && userForm.get('email').errors.required"
+          class="card__input-error">
+          Pole jest wymagane
+        </p>
+      </div>
     </ng-container>
   </div>
   <div class="card__section">

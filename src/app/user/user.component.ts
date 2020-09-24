@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
@@ -21,9 +21,9 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
-      name: new FormControl(this.user.name),
-      phone: new FormControl(this.user.phone),
-      email: new FormControl(this.user.email)
+      name: new FormControl(this.user.name, [Validators.required]),
+      phone: new FormControl(this.user.phone, [Validators.required]),
+      email: new FormControl(this.user.email, [Validators.required])
     });
 
     this.userForm.valueChanges
