@@ -8,6 +8,7 @@ import { User } from '../interfaces/user.interface';
 })
 export class UserComponent implements OnInit {
   @Input() user: User;
+  @Input() index: number;
 
   constructor() { }
 

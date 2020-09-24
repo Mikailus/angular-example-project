@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { BigLettersPipe } from './big-letters.pipe';
 import { UserComponent } from './user/user.component';
+import { BgGreenDirective } from './bg-green.directive';
+import { BgMouseoverDirective } from './bg-mouseover.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     BigLettersPipe,
-    UserComponent
+    UserComponent,
+    BgGreenDirective,
+    BgMouseoverDirective
   ],
   imports: [
     BrowserModule,
