@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { digits } from '../digits.validator';
 
 @Component({
   selector: 'app-new-user-form',
@@ -16,7 +17,7 @@ export class NewUserFormComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.userForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [Validators.required, digits]),
       email: new FormControl('', [Validators.required])
     });
 

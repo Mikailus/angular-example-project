@@ -16,6 +16,12 @@
         class="input-error">
         Pole jest wymagane
       </p>
+
+      <p
+        *ngIf="userForm.get('phone').errors && userForm.get('phone').errors.digits"
+        class="input-error">
+        Dozwolone są tylko cyfry
+      </p>
     </div>
     <div class="input-container">
       <input formControlName="email" class="input" type="text" placeholder="abc@example.com">
