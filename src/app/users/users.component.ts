@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user.interface';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +13,8 @@ export class UsersComponent implements OnInit {
     { id: 2, name: 'Maria', phone: 455645564, email: 'maria@maria.com' },
     { id: 3, name: 'Ola', phone: 78998987, email: 'ola@ola.com' },
   ];
+
+  constructor(private usersService: UsersService) {}
 
   public onUserDelete(id: number): void {
     this.users = this.users.filter(user => user.id !== id);
