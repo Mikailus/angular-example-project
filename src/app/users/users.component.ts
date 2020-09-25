@@ -36,11 +36,14 @@ export class UsersComponent implements OnInit {
   }
 
   public onAddUser(user: Omit<User, 'id'>): void {
-    const id: number = Math.random() * 1000;
-    this.users.push({
-      ...user,
-      id
-    });
+    const id: number = Math.random() * 1000 + 10;
+    this.usersService.createUser(user)
+      .subscribe((user: User) => {
+        this.users.push({
+          ...user,
+          id
+        });
+      });
   }
 
 }
