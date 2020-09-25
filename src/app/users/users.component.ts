@@ -8,16 +8,13 @@ import { UsersService } from '../users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  public users: User[] = [
-    { id: 1, name: 'Jan', phone: 123321123, email: 'jan@jan.com' },
-    { id: 2, name: 'Maria', phone: 455645564, email: 'maria@maria.com' },
-    { id: 3, name: 'Ola', phone: 78998987, email: 'ola@ola.com' },
-  ];
+  public users: User[] = null;
 
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.usersService.getUsers().subscribe(console.log);
+    this.usersService.getUsers()
+      .subscribe((users: User[]) => this.users = users);
   }
 
   public onUserDelete(id: number): void {

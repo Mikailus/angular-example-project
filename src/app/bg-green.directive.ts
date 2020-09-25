@@ -12,6 +12,9 @@ export class BgGreenDirective implements OnChanges {
     if (this.index % 2 === 1) {
       this.renderer.setStyle(this.el.nativeElement, 'background-color', '#32ba62');
       this.renderer.setStyle(this.el.nativeElement, 'color', '#fff');
+    } else {
+      this.renderer.removeStyle(this.el.nativeElement, 'background-color');
+      this.renderer.removeStyle(this.el.nativeElement, 'color');
     }
   }
 }
