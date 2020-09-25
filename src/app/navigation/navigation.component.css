@@ -5,3 +5,7 @@
 .link {
   margin: 0 10px;
 }
+
+.link--active {
+  color: red;
+}
