@@ -18,7 +18,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'posts', component: PostsComponent },
-  { path: 'comments', component: CommentsComponent }
+  { path: 'comments', component: CommentsComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'posts' },
+  { path: '**', redirectTo: 'users' }
 ];
 
 @NgModule({
