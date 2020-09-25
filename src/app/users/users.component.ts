@@ -25,8 +25,14 @@ export class UsersComponent implements OnInit {
   }
 
   public onEditUser(editedUser: User): void {
-    const editedUserIndex: number = this.users.findIndex(user => user.id === editedUser.id);
-    this.users[editedUserIndex] = editedUser;
+    this.usersService.editUser(editedUser.id, {
+      name: editedUser.name,
+      phone: editedUser.phone,
+      email: editedUser.email
+    }).subscribe((editedUserResponse: User) => {
+      const editedUserIndex: number = this.users.findIndex(user => user.id === editedUserResponse.id);
+      this.users[editedUserIndex] = editedUserResponse;
+    });
   }
 
   public onAddUser(user: Omit<User, 'id'>): void {
