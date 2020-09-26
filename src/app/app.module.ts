@@ -17,13 +17,19 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MainPathGuard } from './main-path.guard';
 import { UsersResolver } from './users.resolver';
 import { LoadingComponent } from './loading/loading.component';
+import { UsersToolbarComponent } from './users-toolbar/users-toolbar.component';
+import { PostsToolbarComponent } from './posts-toolbar/posts-toolbar.component';
+import { CommentsToolbarComponent } from './comments-toolbar/comments-toolbar.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [MainPathGuard], resolve: { users: UsersResolver} },
   { path: 'posts', component: PostsComponent, canActivate: [MainPathGuard] },
   { path: 'comments', component: CommentsComponent, canActivate: [MainPathGuard] },
+  { path: 'users', component: UsersToolbarComponent, outlet: 'side' },
+  { path: 'posts', component: PostsToolbarComponent, outlet: 'side' },
+  { path: 'comments', component: CommentsToolbarComponent, outlet: 'side' },
   { path: '', pathMatch: 'full', redirectTo: 'posts' },
-  { path: '**', redirectTo: 'users' }
+  { path: '**', redirectTo: 'users' },
 ];
 
 @NgModule({
@@ -38,7 +44,10 @@ const routes: Routes = [
     PostsComponent,
     CommentsComponent,
     NavigationComponent,
-    LoadingComponent
+    LoadingComponent,
+    UsersToolbarComponent,
+    PostsToolbarComponent,
+    CommentsToolbarComponent
   ],
   imports: [
     BrowserModule,

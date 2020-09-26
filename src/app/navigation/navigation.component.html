@@ -1,5 +1,5 @@
 <nav>
-  <a class="link" routerLink="users" [routerLinkActive]="'link--active'">Users</a>
-  <a class="link" routerLink="posts" [routerLinkActive]="'link--active'">Posts</a>
-  <a class="link" routerLink="comments" [routerLinkActive]="'link--active'">Comments</a>
+  <a class="link" [routerLink]="{ outlets: { primary: 'users', side: 'users' } }" [routerLinkActive]="'link--active'">Users</a>
+  <a class="link" [routerLink]="{ outlets: { primary: 'posts', side: 'posts' } }" [routerLinkActive]="'link--active'">Posts</a>
+  <a class="link" [routerLink]="{ outlets: { primary: 'comments', side: 'comments' } }" [routerLinkActive]="'link--active'">Comments</a>
 </nav>

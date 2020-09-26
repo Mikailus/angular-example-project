@@ -12,7 +12,8 @@ export class MainPathGuard implements CanActivate {
 
   public canActivate(route: ActivatedRouteSnapshot): boolean | Promise<boolean> | Observable<boolean> {
     const mainUrlSegment: UrlSegment = route.url[0];
-    const canActivate: boolean = mainUrlSegment.path !== this.restrictedPath;
+    // const canActivate: boolean = mainUrlSegment.path !== this.restrictedPath;
+    const canActivate: boolean = true;
 
     if (!canActivate) {
       this.router.navigate(['users']);
