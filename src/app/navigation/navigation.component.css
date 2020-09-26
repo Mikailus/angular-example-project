@@ -1,5 +1,9 @@
-:host {
-  margin: 20px
+.nav-list {
+  display: flex;
+}
+
+.mat-list-base {
+  padding: 0;
 }
 
 .link {
@@ -7,5 +11,5 @@
 }
 
 .link--active {
-  color: red;
+  color: yellow;
 }

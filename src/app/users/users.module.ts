@@ -10,6 +10,7 @@ import { BigLettersPipe } from '../pipes/big-letters.pipe';
 import { BgGreenDirective } from '../directives/bg-green.directive';
 import { BgMouseoverDirective } from '../directives/bg-mouseover.directive';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild([])
+    RouterModule.forChild([]),
+    SharedModule
   ]
 })
 export class UsersModule { }

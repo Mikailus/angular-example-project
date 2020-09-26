@@ -36,9 +36,16 @@ export class NewUserFormComponent implements OnInit, OnDestroy {
 
   public onAddUserClick(): void {
     const isFormValid: boolean = this.userForm.valid;
+    this.markAllControlsAsTouched();
     if (isFormValid) {
       this.add.emit(this.userForm.value);
       this.userForm.reset();
     }
+  }
+
+  private markAllControlsAsTouched(): void {
+    this.userForm.get('name').markAsTouched();
+    this.userForm.get('phone').markAsTouched();
+    this.userForm.get('email').markAsTouched();
   }
 }

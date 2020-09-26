@@ -1,1 +1,19 @@
-<p>{{ userDetails | json }}</p>
+<mat-card class="user-details-card">
+  <mat-card-header>
+    <mat-card-title>
+      <p>User name: {{ userDetails.name }}</p>
+      <p>User username: {{ userDetails.username }}</p>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Phone number: {{ userDetails.phone }}
+    </p>
+    <p>
+      Email: {{ userDetails.email }}
+    </p>
+    <p>
+      Website: {{ userDetails.website }}
+    </p>
+  </mat-card-content>
+</mat-card>

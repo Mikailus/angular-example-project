@@ -17,6 +17,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserDetailsResolver } from './services/user-details.resolver';
 import { UsersToolbarComponent } from './users-toolbar/users-toolbar.component';
 import { UsersModule } from './users/users.module';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
   {
@@ -51,7 +52,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    UsersModule
+    UsersModule,
+    SharedModule
   ],
   providers: [
     UsersResolver,

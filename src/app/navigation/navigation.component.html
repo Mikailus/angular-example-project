@@ -1,5 +1,7 @@
-<nav>
-  <a class="link" [routerLink]="{ outlets: { primary: 'users', side: 'users' } }" [routerLinkActive]="'link--active'">Users</a>
-  <a class="link" [routerLink]="{ outlets: { primary: 'posts', side: 'posts' } }" [routerLinkActive]="'link--active'">Posts</a>
-  <a class="link" [routerLink]="{ outlets: { primary: 'comments', side: 'comments' } }" [routerLinkActive]="'link--active'">Comments</a>
-</nav>
+<mat-toolbar color="primary" class="toolbar">
+  <mat-nav-list class="nav-list">
+    <a class="link" mat-list-item  [routerLink]="{ outlets: { primary: 'users', side: 'users' } }" [routerLinkActive]="'link--active'">Users</a>
+    <a class="link" mat-list-item  [routerLink]="{ outlets: { primary: 'posts', side: 'posts' } }" [routerLinkActive]="'link--active'">Posts</a>
+    <a class="link" mat-list-item  [routerLink]="{ outlets: { primary: 'comments', side: 'comments' } }" [routerLinkActive]="'link--active'">Comments</a>
+ </mat-nav-list>
+</mat-toolbar>

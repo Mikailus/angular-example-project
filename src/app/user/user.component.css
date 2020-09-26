@@ -1,14 +1,13 @@
 .card {
-  margin: 20px;
   padding: 10px;
+  width: 300px;
+  height: 240px;
   display: flex;
   flex-direction: column;
-  width: 280px;
-  height: 240px;
-  border: 1px solid grey;
-  border-radius: 10px;
-  background: #FFF;
-  box-shadow: 1px 4px 3px lightgray;
+}
+
+.card__text {
+  color: #000;
 }
 
 .card__title {
@@ -17,15 +16,17 @@
   margin-bottom: 30px;
 }
 
+.card__sections {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .card__section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-}
-
-.card__text {
-  color: grey;
 }
 
 .card__input {
@@ -41,6 +42,12 @@
 
 .card__input-error {
   position: absolute;
-  color: red;
+  color: rgb(210, 0, 0);
   font-size: 10px;
+}
+
+.card__buttons {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
 }
