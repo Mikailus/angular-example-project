@@ -1,3 +1,6 @@
 <app-navigation></app-navigation>
-<p> AppComponent works! </p>
+<div *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>
+
 <router-outlet></router-outlet>

@@ -16,6 +16,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MainPathGuard } from './main-path.guard';
 import { UsersResolver } from './users.resolver';
+import { LoadingComponent } from './loading/loading.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [MainPathGuard], resolve: { users: UsersResolver} },
@@ -36,7 +37,8 @@ const routes: Routes = [
     NewUserFormComponent,
     PostsComponent,
     CommentsComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
