@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './interfaces/user.interface';
+import { ExtendedUser } from './interfaces/extended-user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class UsersService {
 
   public getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  }
+
+  public getUserDetails(userId: number): Observable<ExtendedUser> {
+    return this.httpClient.get<ExtendedUser>(`https://jsonplaceholder.typicode.com/users/${userId}`);
   }
 
   public deleteUser(userId: number): Observable<void> {

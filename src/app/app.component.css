@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.main-content {
+  width: 90%;
+}
+
+.side-content {
+  width: 10%;
+  border: 1px solid #000;
+}

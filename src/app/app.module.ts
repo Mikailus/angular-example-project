@@ -20,9 +20,19 @@ import { LoadingComponent } from './loading/loading.component';
 import { UsersToolbarComponent } from './users-toolbar/users-toolbar.component';
 import { PostsToolbarComponent } from './posts-toolbar/posts-toolbar.component';
 import { CommentsToolbarComponent } from './comments-toolbar/comments-toolbar.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserDetailsResolver } from './user-details.resolver';
 
 const routes: Routes = [
-  { path: 'users', component: UsersComponent, canActivate: [MainPathGuard], resolve: { users: UsersResolver} },
+  {
+    path: 'users',
+    component: UsersComponent,
+    canActivate: [MainPathGuard],
+    resolve: { users: UsersResolver},
+    children: [
+      { path: ':userId', component: UserDetailsComponent, resolve: { userDetails: UserDetailsResolver } }
+    ]
+  },
   { path: 'posts', component: PostsComponent, canActivate: [MainPathGuard] },
   { path: 'comments', component: CommentsComponent, canActivate: [MainPathGuard] },
   { path: 'users', component: UsersToolbarComponent, outlet: 'side' },
@@ -47,7 +57,8 @@ const routes: Routes = [
     LoadingComponent,
     UsersToolbarComponent,
     PostsToolbarComponent,
-    CommentsToolbarComponent
+    CommentsToolbarComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +67,8 @@ const routes: Routes = [
     HttpClientModule
   ],
   providers: [
-    UsersResolver
+    UsersResolver,
+    UserDetailsResolver
   ],
   bootstrap: [AppComponent]
 })
