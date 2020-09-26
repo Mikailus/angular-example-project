@@ -14,11 +14,12 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MainPathGuard } from './main-path.guard';
 
 const routes: Routes = [
-  { path: 'users', component: UsersComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'comments', component: CommentsComponent },
+  { path: 'users', component: UsersComponent, canActivate: [MainPathGuard] },
+  { path: 'posts', component: PostsComponent, canActivate: [MainPathGuard] },
+  { path: 'comments', component: CommentsComponent, canActivate: [MainPathGuard] },
   { path: '', pathMatch: 'full', redirectTo: 'posts' },
   { path: '**', redirectTo: 'users' }
 ];
