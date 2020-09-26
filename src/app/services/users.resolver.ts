@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { User } from './interfaces/user.interface';
+import { User } from '../interfaces/user.interface';
 import { UsersService } from './users.service';
 
 @Injectable()

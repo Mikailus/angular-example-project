@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/cor
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { digits } from '../digits.validator';
+import { digits } from '../validators/digits.validator';
 import { User } from '../interfaces/user.interface';
 
 @Component({

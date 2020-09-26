@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsersService } from './users.service';
-import { ExtendedUser } from './interfaces/extended-user.interface';
+import { ExtendedUser } from '../interfaces/extended-user.interface';
 
 @Injectable()
 export class UserDetailsResolver implements Resolve<ExtendedUser> {
