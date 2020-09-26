@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../interfaces/user.interface';
 import { UsersService } from '../users.service';
 
@@ -10,11 +11,12 @@ import { UsersService } from '../users.service';
 export class UsersComponent implements OnInit {
   public users: User[] = null;
 
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.usersService.getUsers()
-      .subscribe((users: User[]) => this.users = users);
+    this.users = this.route.snapshot.data.users;
   }
 
   public onUserDelete(id: number): void {

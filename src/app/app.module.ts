@@ -15,9 +15,10 @@ import { PostsComponent } from './posts/posts.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MainPathGuard } from './main-path.guard';
+import { UsersResolver } from './users.resolver';
 
 const routes: Routes = [
-  { path: 'users', component: UsersComponent, canActivate: [MainPathGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [MainPathGuard], resolve: { users: UsersResolver} },
   { path: 'posts', component: PostsComponent, canActivate: [MainPathGuard] },
   { path: 'comments', component: CommentsComponent, canActivate: [MainPathGuard] },
   { path: '', pathMatch: 'full', redirectTo: 'posts' },
@@ -43,7 +44,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UsersResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
